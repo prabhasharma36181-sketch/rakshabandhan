@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Ankush & Pankush ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="petals" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero">
+      <div class="diya">🪔</div>
+      <p class="eyebrow">A little Raksha Bandhan surprise</p>
+      <h1>For my two favourite brothers<br><span>Ankush &amp; Pankush ❤️</span></h1>
+      <p class="hero-sub">Some people grow up. Some memories never do.</p>
+      <button class="primary" id="openBtn">Open your surprise ✨</button>
+      <div class="scroll">↓ scroll slowly ↓</div>
+    </section>
+
+    <section class="reveal hidden" id="surprise">
+      <div class="section-title">
+        <span>🪷</span>
+        <h2>From little boys to teenagers...</h2>
+        <p>You both have grown up so much, but when I look at these pictures, I still see the little brothers I grew up with.</p>
+      </div>
+
+      <div class="photo-grid">
+        <article class="photo-card tilt-left">
+          <img src="images/pankush_childhood.jpg" alt="Childhood memory with Pankush">
+          <div class="caption">
+            <small>A little memory</small>
+            <h3>Pankush 💙</h3>
+            <p>One picture, a thousand memories.</p>
+          </div>
+        </article>
+
+        <article class="photo-card tilt-right">
+          <img src="images/ankush_childhood.jpg" alt="Childhood memory with Ankush">
+          <div class="caption">
+            <small>A little memory</small>
+            <h3>Ankush 💙</h3>
+            <p>Some moments become precious only because we didn't know they would.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="memory-section">
+      <div class="memory-photo">
+        <img src="images/all_three_childhood.jpg" alt="A childhood memory of the three siblings">
+        <span class="polaroid-tape"></span>
+      </div>
+      <div class="memory-copy">
+        <p class="eyebrow">THEN → NOW</p>
+        <h2>Look how tiny you two were 😭</h2>
+        <p>
+          It feels like yesterday that we were making random memories together.
+          And now somehow you both are teenagers. Time really needs to slow down.
+        </p>
+        <p>
+          You may be taller, older, and considerably more annoying now...
+          but you'll always be my little brothers. 🫶
+        </p>
+      </div>
+    </section>
+
+    <section class="brothers">
+      <div class="section-title">
+        <span>💌</span>
+        <h2>A note for each of you</h2>
+      </div>
+
+      <div class="notes">
+        <button class="note-card" data-note="ankush">
+          <span class="number">01</span>
+          <span class="note-icon">🌙</span>
+          <h3>Ankush</h3>
+          <p>Tap for your message →</p>
+        </button>
+
+        <button class="note-card" data-note="pankush">
+          <span class="number">02</span>
+          <span class="note-icon">☀️</span>
+          <h3>Pankush</h3>
+          <p>Tap for your message →</p>
+        </button>
+      </div>
+    </section>
+
+    <section class="letter hidden" id="letter">
+      <div class="letter-inner">
+        <div class="seal">❤️</div>
+        <p class="eyebrow" id="letterEyebrow">A little note</p>
+        <h2 id="letterTitle">For you...</h2>
+        <p id="letterText"></p>
+        <button type="button" class="secondary" id="closeLetter">Close 💗</button>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="rakhi">🪷</div>
+      <p class="eyebrow">No matter how much you grow...</p>
+      <h2>You'll always be<br><span>my brothers. ❤️</span></h2>
+      <p class="final-text">
+        Keep growing, keep laughing, keep irritating me, and keep making life a little more fun.
+        I hope you both always know how loved you are.
+      </p>
+      <div class="names">Happy Raksha Bandhan<br><b>Ankush &amp; Pankush</b> 🪷</div>
+      <button class="primary" id="celebrateBtn">Celebrate! 🎉</button>
+      <p class="tiny">Made with love, by your sister.</p>
+    </section>
+  </main>
+
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>

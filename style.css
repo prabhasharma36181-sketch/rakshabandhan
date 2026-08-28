@@ -1,0 +1,426 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream: #fff8ed;
+  --paper: #fffdf8;
+  --maroon: #7c2638;
+  --red: #a9364e;
+  --gold: #c79539;
+  --ink: #39252a;
+  --muted: #795f63;
+  --shadow: 0 22px 60px rgba(91, 37, 43, .14);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(199,149,57,.13), transparent 24%),
+    radial-gradient(circle at 85% 22%, rgba(169,54,78,.10), transparent 27%),
+    var(--cream);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .35;
+  background-image:
+    radial-gradient(circle, rgba(124,38,56,.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, black, transparent 70%);
+}
+
+main { position: relative; z-index: 1; }
+
+.hero {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 70px 22px 40px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(199,149,57,.13);
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.diyaa, .diya {
+  font-size: 48px;
+  animation: float 3s ease-in-out infinite;
+  margin-bottom: 12px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .19em;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+h1, h2, h3 {
+  font-family: "Caveat", cursive;
+  color: var(--maroon);
+}
+
+h1 {
+  font-size: clamp(3.2rem, 11vw, 7rem);
+  line-height: .9;
+  margin: 12px 0 20px;
+  font-weight: 700;
+}
+
+h1 span, .final h2 span { color: var(--red); }
+
+.hero-sub {
+  max-width: 540px;
+  margin: 0 auto 30px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+}
+
+.primary, .secondary {
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.primary {
+  color: white;
+  background: linear-gradient(135deg, var(--maroon), var(--red));
+  box-shadow: 0 12px 30px rgba(124,38,56,.24);
+}
+
+.primary:hover, .secondary:hover { transform: translateY(-3px); }
+
+.secondary {
+  color: var(--maroon);
+  background: #fff;
+  border: 1px solid rgba(124,38,56,.16);
+}
+
+.scroll {
+  position: absolute;
+  bottom: 25px;
+  color: #9c7f83;
+  font-size: .72rem;
+  letter-spacing: .15em;
+}
+
+section { padding: 100px 20px; }
+
+.section-title {
+  max-width: 700px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.section-title > span { font-size: 30px; }
+
+.section-title h2 {
+  font-size: clamp(2.6rem, 8vw, 4.8rem);
+  line-height: .95;
+  margin: 8px 0 12px;
+}
+
+.section-title p, .memory-copy p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.reveal {
+  animation: rise .9s ease both;
+}
+
+.photo-grid {
+  width: min(1050px, 100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.photo-card {
+  background: white;
+  padding: 13px 13px 20px;
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+  transition: transform .35s ease;
+}
+
+.photo-card:hover { transform: translateY(-8px) rotate(0deg); }
+.tilt-left { transform: rotate(-2deg); }
+.tilt-right { transform: rotate(2deg); }
+
+.photo-card img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(.92);
+}
+
+.caption { padding: 18px 8px 2px; }
+.caption small { color: var(--gold); text-transform: uppercase; letter-spacing: .12em; }
+.caption h3 { font-size: 2.2rem; }
+.caption p { color: var(--muted); font-size: .9rem; }
+
+.memory-section {
+  width: min(1050px, 100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.memory-photo {
+  position: relative;
+  background: white;
+  padding: 14px 14px 45px;
+  box-shadow: var(--shadow);
+  transform: rotate(-1.5deg);
+}
+
+.memory-photo img {
+  width: 100%;
+  display: block;
+  max-height: 620px;
+  object-fit: cover;
+}
+
+.polaroid-tape {
+  position: absolute;
+  top: -17px;
+  left: 38%;
+  width: 120px;
+  height: 38px;
+  background: rgba(255,235,179,.72);
+  transform: rotate(3deg);
+}
+
+.memory-copy h2 {
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: .9;
+  margin: 12px 0 22px;
+}
+
+.memory-copy p + p { margin-top: 18px; }
+
+.notes {
+  width: min(900px, 100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.note-card {
+  text-align: left;
+  position: relative;
+  padding: 36px;
+  min-height: 260px;
+  border-radius: 24px;
+  color: var(--ink);
+  background: rgba(255,255,255,.74);
+  border: 1px solid rgba(124,38,56,.10);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform .25s ease;
+}
+
+.note-card:hover { transform: translateY(-7px); }
+
+.note-card::after {
+  content: "♥";
+  position: absolute;
+  right: -15px;
+  bottom: -35px;
+  font-size: 150px;
+  color: rgba(169,54,78,.07);
+}
+
+.number { color: var(--gold); font-weight: 700; }
+.note-icon { display: block; font-size: 36px; margin: 20px 0 5px; }
+.note-card h3 { font-size: 3.2rem; }
+.note-card p { color: var(--muted); margin-top: 5px; }
+
+.letter.hidden {
+  display: none !important;
+}
+
+.letter {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid !important;
+  place-items: center;
+  padding: 20px;
+  background: rgba(50,22,29,.58);
+  backdrop-filter: blur(9px);
+  animation: fade .3s ease both;
+}
+
+.letter-inner {
+  position: relative;
+  width: min(600px, 100%);
+  padding: 55px 38px 40px;
+  background: #fffdf7;
+  border-radius: 5px;
+  box-shadow: 0 30px 100px rgba(0,0,0,.28);
+  text-align: center;
+}
+
+.letter-inner h2 {
+  font-size: 4rem;
+  margin: 7px 0 20px;
+}
+
+.letter-inner p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+.seal {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: white;
+  margin: -82px auto 20px;
+  box-shadow: 0 10px 25px rgba(124,38,56,.25);
+}
+
+.final {
+  min-height: 90svh;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  background:
+    radial-gradient(circle at center, rgba(199,149,57,.18), transparent 42%);
+}
+
+.rakhi {
+  font-size: 68px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.final h2 {
+  font-size: clamp(4rem, 12vw, 8rem);
+  line-height: .78;
+  margin: 14px 0 24px;
+}
+
+.final-text {
+  max-width: 580px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.names {
+  font-family: "Caveat", cursive;
+  font-size: 2.2rem;
+  color: var(--maroon);
+  margin-bottom: 24px;
+}
+
+.names b { color: var(--red); }
+
+.tiny {
+  margin-top: 35px;
+  font-size: .75rem;
+  color: #9b8588;
+}
+
+.petals, .confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -30px;
+  font-size: 18px;
+  animation: fall linear forwards;
+  opacity: .75;
+}
+
+.confetto {
+  position: absolute;
+  top: -20px;
+  width: 8px;
+  height: 13px;
+  background: var(--red);
+  animation: confettiFall 1.8s cubic-bezier(.2,.7,.2,1) forwards;
+}
+
+@keyframes float {
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(35px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.08) rotate(-3deg); }
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+
+@keyframes confettiFall {
+  to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+@media (max-width: 760px) {
+  section { padding: 75px 17px; }
+  .photo-grid, .memory-section, .notes { grid-template-columns: 1fr; }
+  .photo-card img { height: 390px; }
+  .memory-section { gap: 40px; }
+  .note-card { min-height: 220px; }
+  .letter-inner { padding: 48px 24px 30px; }
+}
